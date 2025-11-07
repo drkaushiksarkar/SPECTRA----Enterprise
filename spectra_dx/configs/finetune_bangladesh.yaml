@@ -1,0 +1,7 @@
+inherit: "spectra_dx/configs/global.yaml"
+finetune:
+  country: "Bangladesh"
+  freeze_encoder: false
+  lr: 4.0e-4
+  epochs: 200
+  patience: 25

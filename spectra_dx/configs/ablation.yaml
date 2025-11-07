@@ -1,0 +1,7 @@
+inherit: "spectra_dx/configs/global.yaml"
+ablations:
+  spectral: [true, false]
+  adversarial: [true, false]
+  quantiles: [true, false]
+  heteroscedastic: [true, false]
+  pls_features: [true, false]

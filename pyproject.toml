@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectra-dx"
+version = "0.1.0"
+description = "SPECTRA-Dx: Climate-aware, transfer-learning–ready infectious disease forecasting"
+authors = [{name="Your Org", email="eng@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "scikit-learn>=1.4",
+  "torch>=2.2",
+  "matplotlib>=3.8",
+  "pyyaml>=6.0.1",
+  "tqdm>=4.66",
+  "rich>=13.7",
+  "tabulate>=0.9.0"
+]
+
+[project.scripts]
+spectra-train-global = "spectra_dx.cli:train_global"
+spectra-finetune-country = "spectra_dx.cli:finetune_country"
+spectra-eval = "spectra_dx.cli:evaluate"
+spectra-ablate = "spectra_dx.cli:ablate"
+spectra-viz = "spectra_dx.cli:visualize"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.coverage.run]
+branch = true
+source = ["spectra_dx"]

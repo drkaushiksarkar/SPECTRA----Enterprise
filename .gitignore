@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
+.venv/
+.env/
+
+# PyTorch / model artifacts
+artifacts/
+checkpoints/
+runs/
+
+# Data caches
+data/
+*.parquet
+*.feather
+*.csv
+*.npz
+*.npy
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

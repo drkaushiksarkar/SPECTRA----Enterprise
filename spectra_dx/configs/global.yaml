@@ -1,0 +1,53 @@
+seed: 42
+
+data:
+  climate_csv: "<CLIMATE_CSV_PATH>"
+  dengue_csv: "<DENGUE_CSV_PATH>"
+  out_dir: "artifacts"
+  country_col: "adm_0_name"
+  date_col: "date"
+  target_col: "dengue_incidence_per_lakh"
+
+sequence:
+  length: 12
+  teacher_forcing:
+    start: 1.0
+    end: 0.3
+
+model:
+  latent_dim: 12
+  noise_dim: 16
+  hidden_mult: 4
+  dropout: 0.25
+  beta: 2.0
+  contractive: 1.0e-3
+  lstm_units: 128
+  heads: 8
+
+train:
+  batch_size: 64
+  epochs_vae: 500
+  epochs_gan: 500
+  patience: 25
+  lr_vae: 1.0e-3
+  lr_g: 8.0e-4
+  lr_d: 3.0e-4
+  weight_decay: 1.0e-4
+  clip_norm: 1.0
+
+quantiles: [0.1, 0.5, 0.9]
+ablations:
+  adversarial: true
+  heteroscedastic: true
+  quantiles: true
+  spectral: false
+
+splits:
+  val_h_months: 6
+  test_h_months: 6
+
+spatial_features: [
+  "latitude","longitude","10si","2d","2t","cl","cp","crr","cvh","cvl","e",
+  "i10fg","lai_hv","lai_lv","lsp","lsrr","msl","ro","skt","slt","sp","sro",
+  "swvl1","swvl2","swvl3","swvl4","tcrw","tp"
+]
