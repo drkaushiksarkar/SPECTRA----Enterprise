@@ -102,4 +102,4 @@ docker run --rm -v $PWD:/work -w /work spectra-dx spectra-train-global --config 
 
 ## Disclaimer
 
-This repo provides research software for modeling and forecasting. It is **not** a medical device and should be used with expert oversight.
+This repo provides an AI Platform for modeling and forecasting dengue. It is **not** a medical diagnotics device.
